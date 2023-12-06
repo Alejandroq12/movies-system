@@ -58,3 +58,39 @@ def list_movies(database)
   puts "\nMovies in Database:"
   database.list_movies
 end
+
+def add_review(database)
+  print "Enter the title of the movie to review: "
+  title = gets.chomp
+  movie = database.find_movie(title)
+
+  if movie
+    print "Enter your name: "
+    author = gets.chomp
+    print "Enter your review: "
+    content = gets.chomp
+    movie.add_review(author, content)
+    puts "Review added to '#{movie.title}'."
+  else
+    puts "Movie not found."
+  end
+end
+
+def add_rating(database)
+  print "Enter the title of the movie to rate: "
+  title = gets.chomp
+  movie = database.find_movie(title)
+
+  if movie
+    print "Enter your name: "
+    reviewer = gets.chomp
+    print "Enter your rating (0-10): "
+    score = gets.chomp.to_i
+    movie.add_rating(score, reviewer)
+    puts "Rating added to '#{movie.title}'."
+  else
+    puts "Movie not found."
+  end
+end
+
+main
