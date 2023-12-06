@@ -21,6 +21,7 @@ class Movie
 
   def average_rating
     return 0 if @ratings.empty?
+
     @ratings.sum(&:score) / @ratings.size.to_f
   end
 
@@ -29,9 +30,9 @@ class Movie
       Title: #{@title}
       Director: #{@director}
       Average Rating: #{average_rating.round(2)}/10
-      Reviews: 
+      Reviews:#{' '}
       #{reviews.map(&:to_s).join("\n")}
-      Ratings: 
+      Ratings:#{' '}
       #{ratings.map(&:to_s).join("\n")}
     MOVIE_DETAILS
   end
