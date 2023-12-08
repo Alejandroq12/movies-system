@@ -17,7 +17,7 @@ class Database
     @movies.find { |movie| movie.title == title }
   end
 
-  def list_movies
+  def list_movie
     @movies.each { |movie| puts movie }
   end
 end
