@@ -4,7 +4,7 @@ require_relative 'rating'
 class Movie
   attr_accessor :title, :director, :reviews, :ratings
 
-  def intialize(title, director)
+  def initialize(title, director)
     @title = title
     @director = director
     @reviews = []
